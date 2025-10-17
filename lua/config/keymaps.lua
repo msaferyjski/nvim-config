@@ -5,6 +5,9 @@ local map = vim.keymap.set
 
 -- nvim
 map("n", "<leader>c", ":nohlsearch<CR>", { desc = "Clear highlights" })
+map("n", "<C-s>", function ()
+   vim.cmd("write")
+end, { desc = "Save" })
 
 -- auto-save
 map("n", "<leader>as", ":ASToggle<CR>", {})

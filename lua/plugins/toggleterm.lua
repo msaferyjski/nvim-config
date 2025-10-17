@@ -1,12 +1,11 @@
 return {
-
 	{
 		"akinsho/toggleterm.nvim",
 		version = "*",
-		config = function()
-			require("toggleterm").setup({
-				open_mapping = [[<c-s>]],
-			})
-		end,
+		config = true,
+		opts = {
+			shade_terminals = false,
+			open_mapping = [[<c-t>]],
+		},
 	},
 }

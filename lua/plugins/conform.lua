@@ -5,7 +5,7 @@ return {
 		cmd = { "ConformInfo" },
 		keys = {
 			{
-				"<leader>fo",
+				"<leader>fr",
 				function()
 					require("conform").format({ async = true })
 				end,
@@ -15,23 +15,32 @@ return {
 		},
 
 		opts = {
+			format_on_save = {
+				timeout_ms = 500,
+				lsp_format = "fallback",
+			},
 			formatters_by_ft = {
 				lua = { "stylua" },
 				cpp = { "clang-format" },
 				c = { "clang-format" },
+				javascript = { "prettier" },
+				javascriptreact = { "prettier" },
+				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
 			},
 			default_format_opts = {
 				lsp_format = "fallback",
 			},
-			format_on_save = { timeout_ms = 500 },
 			formatters = {
 				["clang-format"] = {
 					prepend_args = {
-						"--style={BasedOnStyle: WebKit, PointerAlignment: Left, DerivePointerAlignment: false, IndentWidth: 4, ColumnLimit: 120, SortIncludes: false, BinPackArguments: false}",
+						"--style={PointerAlignment: Left, DerivePointerAlignment: false, IndentWidth: 4, ColumnLimit: 80}",
 					},
 				},
-				shfmt = {
-					prepend_args = { "-i", "2" },
+				["prettier"] = {
+					prepend_args = {
+						"--tab-width 4",
+					},
 				},
 			},
 		},

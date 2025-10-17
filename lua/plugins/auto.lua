@@ -6,7 +6,6 @@ return {
 	},
 	{
 		"windwp/nvim-ts-autotag",
-		event = "InsertEnter",
 		opts = {},
 	},
 	{
@@ -14,8 +13,6 @@ return {
 		version = "^1.0.0",
 		cmd = "ASToggle",
 		event = { "InsertLeave", "TextChanged" },
-		opts = {
-			enabled = false,
-		},
+        opts = { enabled = false },
 	},
 }

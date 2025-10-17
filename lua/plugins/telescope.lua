@@ -19,6 +19,16 @@ return {
 					},
 				},
 			})
+			vim.cmd([[                 
+        highlight! link TelescopeNormal Normal
+        highlight! link TelescopeBorder Normal
+        highlight! link TelescopePromptNormal Normal
+        highlight! link TelescopePromptBorder Normal
+        highlight! link TelescopeResultsNormal Normal
+        highlight! link TelescopeResultsBorder Normal
+        highlight! link TelescopePreviewNormal Normal
+        highlight! link TelescopePreviewBorder Normal
+      ]])
 
 			telescope.load_extension("projects")
 

@@ -10,7 +10,13 @@ return {
 			"neovim/nvim-lspconfig",
 		},
 		event = { "BufReadPre", "BufNewFile" },
-		opts = {},
+		opts = {
+			automatic_enable = {
+				exclude = {
+					"rust_analyzer",
+				},
+			},
+		},
 	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
